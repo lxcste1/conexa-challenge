@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Header matches snapshot 1`] = `
+<header
+  class="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur"
+>
+  <div
+    class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3"
+  >
+    <a
+      href="/"
+    >
+      <span
+        class="flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground"
+      >
+        <span
+          data-testid="icon"
+        />
+      </span>
+      <span
+        class="font-display text-base leading-none text-foreground"
+      >
+        Portal
+        <span
+          class="text-primary"
+        >
+          Dex
+        </span>
+      </span>
+    </a>
+    <nav
+      class="flex items-center gap-1 text-sm"
+    >
+      <a
+        href="/"
+      >
+        Home
+      </a>
+      <a
+        href="/explorer"
+      >
+        Explorer
+      </a>
+    </nav>
+  </div>
+</header>
+`;

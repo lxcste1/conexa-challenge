@@ -1,13 +1,38 @@
 jest.mock("next/font/google", () => {
-  const mockFont = (options: { variable: string; subsets: string[] }) => ({
+  const mockFont = (options: { variable: string }) => ({
     variable: options.variable,
-    subsets: options.subsets,
   });
+  return new Proxy(
+    {},
+    {
+      get() {
+        return mockFont;
+      },
+    }
+  );
+});
 
-  return {
-    Geist: mockFont,
-    Geist_Mono: mockFont,
+jest.mock("next/link", () => {
+  return function MockLink({
+    children,
+    href,
+  }: {
+    children: React.ReactNode;
+    href: string;
+  }) {
+    return <a href={href}>{children}</a>;
   };
+});
+
+jest.mock("lucide-react", () => {
+  return new Proxy(
+    {},
+    {
+      get() {
+        return () => null;
+      },
+    }
+  );
 });
 
 import { render } from "@testing-library/react";
@@ -26,8 +51,8 @@ describe("RootLayout", () => {
     spy.mockRestore();
 
     expect(document.documentElement.lang).toBe("en");
-    expect(document.documentElement.className).toContain("--font-geist-sans");
-    expect(document.documentElement.className).toContain("--font-geist-mono");
+    expect(document.documentElement.className).toContain("--font-inter");
+    expect(document.documentElement.className).toContain("--font-bungee");
 
     expect(document.body).toBeInTheDocument();
     expect(document.body).toHaveTextContent("Test");
