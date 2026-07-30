@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`StatusDot matches snapshot for Alive with species 1`] = `
+<span
+  class="flex items-center gap-1.5 text-xs font-medium"
+>
+  <span
+    aria-hidden="true"
+    class="size-2 shrink-0 rounded-full bg-status-alive shadow-[0_0_8px_var(--status-alive)]"
+  />
+  <span
+    class="text-foreground"
+  >
+    Alive
+    <span
+      class="text-muted-foreground"
+    >
+       · 
+      Human
+    </span>
+  </span>
+</span>
+`;

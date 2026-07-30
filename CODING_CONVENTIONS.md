@@ -122,7 +122,8 @@ Violating this protocol (e.g., using SSR for static marketing text, using CSR fo
 ## UI & Styling
 
 - **shadcn/ui first:** Before creating a component from scratch, check if a shadcn/ui implementation exists. Use it as foundation.
-- **Tailwind + CVA:** Use CVA to manage visual variants (size, color, etc.) instead of manual string concatenation.
+- **Tailwind + CVA:** Use CVA to manage visual variants (size, color, etc.) instead of manual string concatenation or ternary operators.
+- **Next.js `<Image />`:** Use `<Image />` from `next/image` over native `<img>` for all images. External domains must be added to `next.config.ts` `images.remotePatterns`.
 
 ## Naming Conventions
 
@@ -135,6 +136,24 @@ Violating this protocol (e.g., using SSR for static marketing text, using CSR fo
 | Types / Interfaces        | `PascalCase` (no `I`/`T` prefixes)       | `UserProps`                            |
 | Global constants          | `UPPER_SNAKE_CASE`                       | `MAX_PAGINATION_LIMIT`                 |
 | Boolean vars / props      | prefix with `is`, `has`, `should`, `can` | `isLoading`, `hasError`                |
+
+## Component File Structure
+
+Every component SHALL live in its own folder under `components/ui/`. The folder structure for a component named `Foo` is:
+
+```
+components/ui/foo/
+├── Foo.tsx                  ← Component implementation (export only the component)
+├── foo-styles.ts            ← CVA variants, if the component uses visual variants
+├── __tests__/
+│   └── Foo.test.tsx         ← Co-located tests
+└── components/              ← Sub-components (only if Foo has children)
+    └── Bar.tsx
+```
+
+- If CVA variants are shared across multiple components, they SHALL live in `utils/<name>-variants.ts`.
+- If a constant/mapping is used by only one component, it SHALL live in the component's folder (e.g., `status-styles.ts`).
+- If shared, it SHALL live in `utils/`.
 
 ## Code Style
 
