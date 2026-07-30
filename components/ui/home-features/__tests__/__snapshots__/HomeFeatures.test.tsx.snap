@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`HomeFeatures matches snapshot 1`] = `
+<section
+  class="mx-auto max-w-6xl px-4 pb-20"
+>
+  <div
+    class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+  >
+    <article
+      class="rounded-2xl border border-border bg-card/60 p-6 backdrop-blur transition-colors hover:border-primary/40"
+    >
+      <span
+        class="flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary"
+      >
+        <span
+          data-testid="icon"
+        />
+      </span>
+      <h3
+        class="mt-4 font-display text-lg text-card-foreground"
+      >
+        Dual selection
+      </h3>
+      <p
+        class="mt-2 text-pretty text-sm leading-relaxed text-muted-foreground"
+      >
+        Browse the full paginated roster and lock in Character #1 and Character #2 from independent columns.
+      </p>
+    </article>
+    <article
+      class="rounded-2xl border border-border bg-card/60 p-6 backdrop-blur transition-colors hover:border-primary/40"
+    >
+      <span
+        class="flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary"
+      >
+        <span
+          data-testid="icon"
+        />
+      </span>
+      <h3
+        class="mt-4 font-display text-lg text-card-foreground"
+      >
+        Solo & shared episodes
+      </h3>
+      <p
+        class="mt-2 text-pretty text-sm leading-relaxed text-muted-foreground"
+      >
+        Instantly split their appearances into three lists: each one solo, plus the episodes they share.
+      </p>
+    </article>
+    <article
+      class="rounded-2xl border border-border bg-card/60 p-6 backdrop-blur transition-colors hover:border-primary/40"
+    >
+      <span
+        class="flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary"
+      >
+        <span
+          data-testid="icon"
+        />
+      </span>
+      <h3
+        class="mt-4 font-display text-lg text-card-foreground"
+      >
+        Live from the API
+      </h3>
+      <p
+        class="mt-2 text-pretty text-sm leading-relaxed text-muted-foreground"
+      >
+        Every character, status and episode is pulled straight from the official Rick and Morty API.
+      </p>
+    </article>
+  </div>
+</section>
+`;

@@ -33,7 +33,9 @@ export function EpisodeSection({
           <h3 className="text-xs font-semibold leading-tight text-card-foreground sm:text-sm">
             {title}
           </h3>
-          <p className="mt-0.5 text-[0.65rem] text-muted-foreground sm:text-xs">{subtitle}</p>
+          <p className="mt-0.5 text-[0.65rem] text-muted-foreground sm:text-xs">
+            {subtitle}
+          </p>
         </div>
         <span
           className={cn(
@@ -46,7 +48,7 @@ export function EpisodeSection({
         </span>
       </header>
 
-      <div className="flex-1 space-y-1.5 overflow-y-auto p-2 max-h-[26rem] sm:space-y-2 sm:p-3">
+      <div className="flex-1 space-y-1.5 overflow-y-auto p-2 max-h-104 sm:space-y-2 sm:p-3">
         {isLoading ? (
           Array.from({ length: 3 }).map((_, i) => (
             <Skeleton key={i} className="h-16 w-full rounded-xl" />
