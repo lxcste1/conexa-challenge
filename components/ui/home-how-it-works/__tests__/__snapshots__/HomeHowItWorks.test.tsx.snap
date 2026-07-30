@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`HomeHowItWorks matches snapshot 1`] = `
+<section
+  class="mx-auto max-w-6xl px-4 pb-20"
+>
+  <div
+    class="rounded-3xl border border-border bg-card/40 p-6 backdrop-blur sm:p-10"
+  >
+    <h2
+      class="text-center font-display text-2xl text-foreground text-balance"
+    >
+      Three steps to the answer
+    </h2>
+    <ol
+      class="mt-8 grid gap-6 sm:grid-cols-3"
+    >
+      <li
+        class="flex flex-col gap-2"
+      >
+        <span
+          class="font-display text-3xl text-primary/70"
+        >
+          01
+        </span>
+        <h3
+          class="text-base font-semibold text-card-foreground"
+        >
+          Select Character #1
+        </h3>
+        <p
+          class="text-sm text-muted-foreground"
+        >
+          Search and pick from the first paginated column.
+        </p>
+      </li>
+      <li
+        class="flex flex-col gap-2"
+      >
+        <span
+          class="font-display text-3xl text-primary/70"
+        >
+          02
+        </span>
+        <h3
+          class="text-base font-semibold text-card-foreground"
+        >
+          Select Character #2
+        </h3>
+        <p
+          class="text-sm text-muted-foreground"
+        >
+          Do the same in the second column — no duplicates allowed.
+        </p>
+      </li>
+      <li
+        class="flex flex-col gap-2"
+      >
+        <span
+          class="font-display text-3xl text-primary/70"
+        >
+          03
+        </span>
+        <h3
+          class="text-base font-semibold text-card-foreground"
+        >
+          Reveal the episodes
+        </h3>
+        <p
+          class="text-sm text-muted-foreground"
+        >
+          The three episode sections unlock automatically.
+        </p>
+      </li>
+    </ol>
+    <div
+      class="mt-10 flex justify-center"
+    >
+      <a
+        href="/explorer"
+      >
+        Start exploring
+        <span
+          data-testid="icon"
+        />
+      </a>
+    </div>
+  </div>
+</section>
+`;

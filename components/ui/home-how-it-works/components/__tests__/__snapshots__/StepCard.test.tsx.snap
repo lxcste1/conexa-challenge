@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`StepCard matches snapshot 1`] = `
+<li
+  class="flex flex-col gap-2"
+>
+  <span
+    class="font-display text-3xl text-primary/70"
+  >
+    01
+  </span>
+  <h3
+    class="text-base font-semibold text-card-foreground"
+  >
+    Select Character #1
+  </h3>
+  <p
+    class="text-sm text-muted-foreground"
+  >
+    Search and pick from the first column.
+  </p>
+</li>
+`;

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`FeatureCard matches snapshot 1`] = `
+<article
+  class="rounded-2xl border border-border bg-card/60 p-6 backdrop-blur transition-colors hover:border-primary/40"
+>
+  <span
+    class="flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary"
+  >
+    <span
+      data-testid="icon"
+    />
+  </span>
+  <h3
+    class="mt-4 font-display text-lg text-card-foreground"
+  >
+    Dual selection
+  </h3>
+  <p
+    class="mt-2 text-pretty text-sm leading-relaxed text-muted-foreground"
+  >
+    Browse the full paginated roster.
+  </p>
+</article>
+`;
