@@ -56,8 +56,8 @@ The project SHALL have a snapshot test at `app/__tests__/layout.test.tsx` that r
 
 - **WHEN** `RootLayout` is rendered with `<p>Test</p>` as children
 - **THEN** the rendered output contains an `<html lang="en">` element
-- **AND** the output contains the font CSS variables `--font-geist-sans` and `--font-geist-mono` in the `<html>` className
-- **AND** the output contains a `<body>` with the children rendered inside
+- **AND** the output contains the font CSS variables `--font-inter` and `--font-bungee` in the `<html>` className
+- **AND** the output contains a `<body>` with the children and Header/Footer rendered inside
 - **AND** the serialized output matches the stored snapshot
 
 #### Scenario: Snapshot is updated when layout changes
@@ -68,17 +68,12 @@ The project SHALL have a snapshot test at `app/__tests__/layout.test.tsx` that r
 
 ### Requirement: next/font/google is mocked in tests
 
-The project SHALL mock `next/font/google` at the module level so that font-related CSS variables render predictably without downloading font files.
+The project SHALL mock `next/font/google` at the module level so that font-related CSS variables render predictably without downloading font files. The mock SHALL use a generic Proxy-based factory that returns a font constructor for any font name, accepting `{ variable: string }` options and returning `{ variable }`.
 
-#### Scenario: Geist font mock returns a stable variable value
+#### Scenario: Font mock returns a stable variable value for any font
 
-- **WHEN** `RootLayout` calls `Geist({ variable: "--font-geist-sans", subsets: ["latin"] })` at module scope
-- **THEN** the mock returns an object with `variable: "--font-geist-sans"` (the variable name passed as argument)
-
-#### Scenario: Geist_Mono font mock returns a stable variable value
-
-- **WHEN** `RootLayout` calls `Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] })` at module scope
-- **THEN** the mock returns an object with `variable: "--font-geist-mono"` (the variable name passed as argument)
+- **WHEN** `RootLayout` calls any font constructor (e.g., `Inter({ variable: "--font-inter", ... })` or `Bungee({ variable: "--font-bungee", ... })`) at module scope
+- **THEN** the mock returns an object with the `variable` value matching the argument passed to the constructor
 
 ### Requirement: Tests are mandatory for every change
 
@@ -128,5 +123,35 @@ The project SHALL document testing conventions in `CODING_CONVENTIONS.md` coveri
   - File naming (`*.test.tsx` / `*.test.ts`)
   - Mandatory coverage for every change introducing new code
   - Snapshot testing guidelines for layout and presentational components
-  - Mocking conventions for Next.js internals
+  - Mocking conventions for Next.js internals (`next/font/google`, `next/link`, `lucide-react`)
   - `pnpm test` as a required validation step
+
+### Requirement: Transitive dependencies are mocked in layout tests
+
+Tests that render components with transitive dependencies on Next.js internals SHALL mock those dependencies at the module level. Specifically, `next/link` SHALL be mocked to render as a plain `<a>` element and `lucide-react` SHALL be mocked using a Proxy returning null-rendering components.
+
+#### Scenario: next/link mock prevents module resolution errors
+
+- **WHEN** a test renders a component tree that uses `next/link` (directly or transitively via Header/Footer)
+- **THEN** `next/link` SHALL be mocked to render an `<a>` element with the provided `href`
+- **AND** no module resolution error SHALL be thrown
+
+#### Scenario: lucide-react mock prevents module resolution errors
+
+- **WHEN** a test renders a component tree that uses `lucide-react` icons (directly or transitively)
+- **THEN** `lucide-react` SHALL be mocked using a Proxy returning a null-rendering component factory
+- **AND** no module resolution error SHALL be thrown
+
+### Requirement: Header and Footer components have co-located tests
+
+New presentational components added to `components/ui/` SHALL have corresponding test files in a sibling `__tests__/` directory following the project's testing conventions.
+
+#### Scenario: Header test exists
+
+- **WHEN** a developer checks `components/ui/header/`
+- **THEN** a `__tests__/Header.test.tsx` file SHALL exist
+
+#### Scenario: Footer test exists
+
+- **WHEN** a developer checks `components/ui/footer/`
+- **THEN** a `__tests__/Footer.test.tsx` file SHALL exist
