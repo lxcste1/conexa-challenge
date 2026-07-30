@@ -1,0 +1,20 @@
+schema: spec-driven
+
+# Project context (optional)
+# This is shown to AI when creating artifacts.
+# Add your tech stack, conventions, style guides, domain knowledge, etc.
+context: |
+  **IMPORTANT: Before creating any artifact, you MUST read `CODING_CONVENTIONS.md` and `AGENTS.md` at the project root.** These files define the strict coding conventions, rendering strategy rules (SSG, ISR, SSR, CSR), tech stack restrictions, and architectural decisions that every change MUST comply with. Artifacts that violate these conventions will be rejected.
+
+  Tech stack: Next.js 16 (App Router), React 19, TypeScript 5, Tailwind CSS v4, pnpm, shadcn/ui, CVA.
+  Uses public Rick and Morty API (https://rickandmortyapi.com/).
+
+# Per-artifact rules (optional)
+# Add custom rules for specific artifacts.
+# Example:
+#   rules:
+#     proposal:
+#       - Keep proposals under 500 words
+#       - Always include a "Non-goals" section
+#     tasks:
+#       - Break tasks into chunks of max 2 hours
