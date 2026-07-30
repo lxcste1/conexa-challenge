@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`EpisodeSection matches snapshot 1`] = `
+<section
+  aria-label="Only Episodes"
+  class="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card/40 backdrop-blur"
+>
+  <header
+    class="flex items-start gap-2 border-b border-border p-3 sm:gap-3 sm:p-4"
+  >
+    <span
+      aria-hidden="true"
+      class="mt-0.5 h-7 w-1 rounded-full sm:h-9 bg-primary"
+    />
+    <div
+      class="min-w-0 flex-1"
+    >
+      <h3
+        class="text-xs font-semibold leading-tight text-card-foreground sm:text-sm"
+      >
+        Only Episodes
+      </h3>
+      <p
+        class="mt-0.5 text-[0.65rem] text-muted-foreground sm:text-xs"
+      >
+        Solo
+      </p>
+    </div>
+    <span
+      class="flex items-center gap-1 rounded-full bg-background/60 px-2 py-0.5 text-xs font-semibold text-primary"
+    >
+      <span
+        data-testid="icon"
+      />
+      1
+    </span>
+  </header>
+  <div
+    class="flex-1 space-y-1.5 overflow-y-auto p-2 max-h-[26rem] sm:space-y-2 sm:p-3"
+  >
+    <article
+      class="flex items-center gap-2 rounded-xl border border-border bg-card/70 p-2 transition-colors hover:border-foreground/20 sm:gap-3 sm:p-3"
+    >
+      <span
+        class="inline-flex items-center justify-center gap-1 rounded-full border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 border-border text-foreground shrink-0 font-mono"
+        data-slot="badge"
+      >
+        S01E01
+      </span>
+      <div
+        class="min-w-0 flex-1"
+      >
+        <h4
+          class="truncate text-xs font-medium text-card-foreground sm:text-sm"
+        >
+          Pilot
+        </h4>
+        <p
+          class="mt-0.5 flex items-center gap-1 text-xs text-muted-foreground"
+        >
+          <span
+            data-testid="icon"
+          />
+          December 2, 2013
+        </p>
+      </div>
+    </article>
+  </div>
+</section>
+`;

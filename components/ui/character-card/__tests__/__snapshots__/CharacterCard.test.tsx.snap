@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`CharacterCard matches snapshot 1`] = `
+<button
+  aria-pressed="false"
+  class="group relative flex w-full items-center gap-2 rounded-xl border border-border bg-card p-1.5 text-left transition-all sm:gap-3 sm:p-2.5 hover:border-foreground/25 hover:bg-card/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+  type="button"
+>
+  <img
+    alt="Rick Sanchez"
+    class="size-12 shrink-0 rounded-lg object-cover sm:size-20"
+    height="80"
+    src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+    width="80"
+  />
+  <div
+    class="min-w-0 flex-1"
+  >
+    <h3
+      class="truncate text-xs font-semibold text-card-foreground sm:text-base"
+    >
+      Rick Sanchez
+    </h3>
+    <div
+      class="mt-1"
+    >
+      <span
+        class="flex items-center gap-1.5 text-xs font-medium"
+      >
+        <span
+          aria-hidden="true"
+          class="size-2 shrink-0 rounded-full bg-status-alive shadow-[0_0_8px_var(--status-alive)]"
+        />
+        <span
+          class="text-foreground"
+        >
+          Alive
+          <span
+            class="text-muted-foreground"
+          >
+             · 
+            Human
+          </span>
+        </span>
+      </span>
+    </div>
+    <p
+      class="mt-1 truncate text-xs text-muted-foreground"
+    >
+      2
+       episode
+      s
+    </p>
+  </div>
+  <span
+    aria-hidden="true"
+    class="flex size-5 shrink-0 items-center justify-center rounded-full border transition-all sm:size-6 border-border text-transparent"
+  >
+    <span
+      data-testid="icon"
+    />
+  </span>
+</button>
+`;

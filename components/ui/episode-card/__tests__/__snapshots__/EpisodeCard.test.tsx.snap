@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`EpisodeCard matches snapshot 1`] = `
+<article
+  class="flex items-center gap-2 rounded-xl border border-border bg-card/70 p-2 transition-colors hover:border-foreground/20 sm:gap-3 sm:p-3"
+>
+  <span
+    class="inline-flex items-center justify-center gap-1 rounded-full border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 border-border text-foreground shrink-0 font-mono"
+    data-slot="badge"
+  >
+    S01E01
+  </span>
+  <div
+    class="min-w-0 flex-1"
+  >
+    <h4
+      class="truncate text-xs font-medium text-card-foreground sm:text-sm"
+    >
+      Pilot
+    </h4>
+    <p
+      class="mt-0.5 flex items-center gap-1 text-xs text-muted-foreground"
+    >
+      <span
+        data-testid="icon"
+      />
+      December 2, 2013
+    </p>
+  </div>
+</article>
+`;

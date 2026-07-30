@@ -1,9 +1,11 @@
+export interface ApiInfo {
+  count: number;
+  pages: number;
+  next: string | null;
+  prev: string | null;
+}
+
 export interface PaginatedResponse<T> {
-  info: {
-    count: number;
-    pages: number;
-    next: string | null;
-    prev: string | null;
-  };
+  info: ApiInfo;
   results: T[];
 }
