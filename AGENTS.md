@@ -4,6 +4,8 @@
 - `pnpm dev` — start dev server (port 3000)
 - `pnpm build` — production build
 - `pnpm lint` — ESLint (Next.js core-web-vitals + typescript configs)
+- `pnpm test` — run Jest tests
+- `pnpm test:watch` — run Jest in watch mode
 - `pnpm install` — install dependencies (use pnpm, not npm/yarn)
 
 ## Stack
@@ -20,7 +22,7 @@
 
 ## Architecture
 - `app/` — Next.js App Router (layout.tsx, page.tsx, globals.css)
-- No test framework configured yet
+- Jest + React Testing Library for unit tests (`app/__tests__/`, snapshot testing)
 - No `.env` or API keys needed — uses public Rick and Morty API (`https://rickandmortyapi.com/`)
 
 ## Conventions

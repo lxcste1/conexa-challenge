@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`RootLayout matches snapshot 1`] = `
+<body
+  class="min-h-full flex flex-col"
+>
+  <div>
+    <p>
+      Test
+    </p>
+  </div>
+</body>
+`;
