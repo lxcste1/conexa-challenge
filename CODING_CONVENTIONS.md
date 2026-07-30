@@ -156,7 +156,18 @@ Violating this protocol (e.g., using SSR for static marketing text, using CSR fo
 - Modals and dialogs must be full-screen on mobile, centered panel on desktop.
 - Touch targets must be at least 44x44px on mobile.
 
+## Testing
+
+- **Every change MUST include tests.** New components, hooks, or utilities introduced in a change SHALL have corresponding test files. Modifying existing code that lacks tests SHALL add tests for the modified behavior.
+- **Test files MUST be co-located** in `__tests__/` folders next to the code they test.
+- **Naming:** Test files MUST use the pattern `*.test.ts` or `*.test.tsx` matching the file under test. Example: `app/components/UserCard.tsx` → `app/components/__tests__/UserCard.test.tsx`.
+- **Snapshot tests:** Layout components and static presentational components SHOULD use `toMatchSnapshot()` to capture full rendered structure. Snapshots MUST be committed. Run `pnpm test -- --updateSnapshot` when intentionally changing markup.
+- **Behavioral tests:** Hooks (`.ts`) and utilities MUST use assertions on return values and side effects rather than snapshots.
+- **Mocking:** Next.js internals (`next/font/google`, `next/image`, `next/navigation`) MUST be mocked at module level using `jest.mock()` at the top of test files. Mock implementations MUST return stable, predictable values. API calls MUST be mocked — never make real HTTP requests in unit tests.
+- **Runner:** Jest configured via `next/jest` with `jsdom` environment, `@testing-library/react` for rendering, and `@testing-library/jest-dom` for DOM matchers.
+
 ## Validation
 
 - Run `pnpm lint` (ESLint) before committing.
+- Run `pnpm test` before committing to ensure all tests pass.
 - Run `pnpm build` before committing to catch TypeScript and build errors.
